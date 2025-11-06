@@ -351,6 +351,16 @@ body {
     flex-direction: column;
 }
 
+@media (max-width: 400px) {
+    .quantity-form {
+        padding: 15px;
+    }
+    
+    .items-modal-list {
+        padding: 15px;
+    }
+}
+
 .quantity-form.hidden {
     display: none;
 }
@@ -691,6 +701,12 @@ body {
     flex-direction: column;
 }
 
+@media (max-width: 400px) {
+    .modal-content {
+        border-radius: 15px 15px 0 0;
+    }
+}
+
 @keyframes slideUp {
     from {
         transform: translateY(100%);
@@ -760,6 +776,161 @@ body {
 @media (max-width: 500px) {
     .wizard-app, .modal-content {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .wizard-header {
+        padding: 40px 15px 15px;
+    }
+    
+    .wizard-step {
+        padding: 15px;
+    }
+    
+    .wizard-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .create-client-btn {
+        padding: 16px;
+        font-size: 15px;
+    }
+    
+    .client-item {
+        padding: 16px;
+        gap: 12px;
+    }
+    
+    .client-avatar {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+    
+    .client-name {
+        font-size: 15px;
+    }
+    
+    .client-email,
+    .client-address {
+        font-size: 13px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 14px;
+        font-size: 16px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .wizard-footer {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 14px;
+        font-size: 15px;
+        min-height: 48px;
+    }
+    
+    .add-item-btn {
+        padding: 16px;
+        font-size: 15px;
+    }
+    
+    .item-card {
+        padding: 14px;
+    }
+    
+    .item-description {
+        font-size: 15px;
+    }
+    
+    .item-details {
+        font-size: 13px;
+    }
+    
+    .total-section {
+        padding: 16px;
+    }
+    
+    .total-row {
+        font-size: 14px;
+    }
+    
+    .total-final {
+        font-size: 18px;
+    }
+    
+    .saved-items-list {
+        max-height: 300px;
+    }
+    
+    .saved-item-card {
+        padding: 14px;
+    }
+    
+    .saved-item-title {
+        font-size: 15px;
+    }
+    
+    .saved-item-description {
+        font-size: 13px;
+    }
+    
+    .saved-item-details {
+        font-size: 13px;
+    }
+    
+    .saved-item-price {
+        font-size: 15px;
+    }
+    
+    .create-item-btn {
+        padding: 14px;
+        font-size: 15px;
+    }
+    
+    .modal-header {
+        padding: 15px;
+    }
+    
+    .modal-header h2 {
+        font-size: 18px;
+    }
+    
+    .modal form {
+        padding: 15px;
+    }
+    
+    .modal-footer {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .client-type-selector {
+        gap: 10px;
+    }
+    
+    .radio-label {
+        padding: 14px;
+        font-size: 13px;
+    }
+    
+    .form-section {
+        padding: 14px;
+    }
+    
+    .form-section h4 {
+        font-size: 14px;
     }
 }
 

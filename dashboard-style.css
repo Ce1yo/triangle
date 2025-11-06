@@ -303,6 +303,96 @@ body {
     }
 }
 
+@media (max-width: 400px) {
+    .header {
+        padding: 40px 15px 15px;
+    }
+    
+    .header-title {
+        font-size: 28px;
+    }
+    
+    .tabs-container {
+        padding: 10px 15px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tab {
+        padding: 8px 16px;
+        font-size: 14px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .create-btn {
+        margin: 15px;
+        width: calc(100% - 30px);
+        padding: 16px;
+        font-size: 15px;
+    }
+    
+    .summary-section {
+        padding: 15px;
+    }
+    
+    .summary-month {
+        font-size: 18px;
+    }
+    
+    .summary-total {
+        font-size: 18px;
+    }
+    
+    .documents-list {
+        padding: 0 15px 20px;
+    }
+    
+    .document-item {
+        padding: 14px 0;
+        gap: 12px;
+    }
+    
+    .document-avatar {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+    
+    .document-name {
+        font-size: 15px;
+    }
+    
+    .document-number {
+        font-size: 13px;
+    }
+    
+    .document-amount {
+        font-size: 15px;
+    }
+    
+    .document-status {
+        font-size: 12px;
+    }
+    
+    .bottom-nav {
+        padding: 8px 0 20px;
+    }
+    
+    .nav-item {
+        padding: 4px;
+    }
+    
+    .nav-item svg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .nav-item span {
+        font-size: 10px;
+    }
+}
+
 /* Loading */
 .loading-spinner {
     display: inline-block;
@@ -345,6 +435,33 @@ body {
     max-height: 90vh;
     overflow-y: auto;
     animation: slideUp 0.3s ease;
+}
+
+@media (max-width: 400px) {
+    .modal-content {
+        max-height: 95vh;
+    }
+    
+    .modal-header {
+        padding: 15px;
+    }
+    
+    .modal-header h2 {
+        font-size: 20px;
+    }
+    
+    .modal-body {
+        padding: 15px;
+    }
+    
+    .modal-footer {
+        padding: 15px;
+        flex-direction: column;
+    }
+    
+    .modal-footer button {
+        width: 100%;
+    }
 }
 
 @keyframes slideUp {
@@ -606,6 +723,33 @@ body {
     text-align: right;
     max-width: 60%;
     word-break: break-word;
+}
+
+@media (max-width: 400px) {
+    .detail-row {
+        padding: 12px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    
+    .detail-value {
+        max-width: 100%;
+        text-align: left;
+    }
+    
+    .status-section {
+        padding: 15px;
+    }
+    
+    .status-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .status-badge {
+        padding: 14px;
+    }
 }
 
 .detail-section {
