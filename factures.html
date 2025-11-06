@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Génération de Factures</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="back-btn" onclick="window.location.href='dashboard.html'">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h2>Nouvelle Facture</h2>
+            <button id="logoutBtn" class="btn btn-logout">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <div class="main-container">
+        <div class="form-container">
+            <h1>Créer une Facture</h1>
+            
+            <form id="factureForm">
+                <div class="section">
+                    <h3>Informations Client</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clientName">Nom du client *</label>
+                            <input type="text" id="clientName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Email</label>
+                            <input type="email" id="clientEmail">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clientPhone">Téléphone</label>
+                            <input type="tel" id="clientPhone">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientAddress">Adresse</label>
+                            <input type="text" id="clientAddress">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>Informations Entreprise</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="companyName">Nom de l'entreprise *</label>
+                            <input type="text" id="companyName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyAddress">Adresse entreprise</label>
+                            <input type="text" id="companyAddress">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="companySiret">SIRET</label>
+                            <input type="text" id="companySiret">
+                        </div>
+                        <div class="form-group">
+                            <label for="companyPhone">Téléphone entreprise</label>
+                            <input type="tel" id="companyPhone">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>Articles / Services</h3>
+                    <div id="itemsContainer">
+                        <div class="item-row">
+                            <input type="text" placeholder="Description" class="item-description" required>
+                            <input type="number" placeholder="Quantité" class="item-quantity" value="1" min="1" required>
+                            <input type="number" placeholder="Prix unitaire (€)" class="item-price" step="0.01" min="0" required>
+                            <button type="button" class="btn-remove-item" disabled>-</button>
+                        </div>
+                    </div>
+                    <button type="button" id="addItemBtn" class="btn btn-secondary">+ Ajouter un article</button>
+                </div>
+                
+                <div class="section">
+                    <h3>Informations Facture</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="factureNumber">Numéro de facture *</label>
+                            <input type="text" id="factureNumber" required placeholder="Ex: F-2024-001">
+                        </div>
+                        <div class="form-group">
+                            <label for="factureDate">Date de la facture *</label>
+                            <input type="date" id="factureDate" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dueDate">Date d'échéance</label>
+                            <input type="date" id="dueDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentMethod">Moyen de paiement</label>
+                            <select id="paymentMethod">
+                                <option value="">Sélectionner</option>
+                                <option value="Virement bancaire">Virement bancaire</option>
+                                <option value="Chèque">Chèque</option>
+                                <option value="Espèces">Espèces</option>
+                                <option value="Carte bancaire">Carte bancaire</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Notes / Conditions de paiement</label>
+                        <textarea id="notes" rows="4" placeholder="Pénalités de retard, escompte, etc."></textarea>
+                    </div>
+                </div>
+                
+                <div class="total-section">
+                    <div class="total-row">
+                        <span>Total HT:</span>
+                        <span id="totalHT">0.00 €</span>
+                    </div>
+                    <div class="total-row">
+                        <span>TVA (20%):</span>
+                        <span id="totalTVA">0.00 €</span>
+                    </div>
+                    <div class="total-row total-final">
+                        <span>Total TTC:</span>
+                        <span id="totalTTC">0.00 €</span>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Générer la facture PDF</button>
+                    <button type="button" id="saveFactureBtn" class="btn btn-secondary">Sauvegarder</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="saved-list">
+            <h2>Factures sauvegardées</h2>
+            <div id="facturesList" class="saved-items-list">
+                <p class="empty-message">Aucune facture sauvegardée</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="factures.js"></script>
+</body>
+</html>
