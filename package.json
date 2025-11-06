@@ -1,0 +1,11 @@
+{
+  "name": "triangle-gestion-devis",
+  "version": "1.0.0",
+  "description": "Application de gestion de devis et factures",
+  "scripts": {
+    "build": "node generate-firebase-config.js"
+  },
+  "type": "commonjs",
+  "author": "",
+  "license": "ISC"
+}
